@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature\Controllers\Article\Upload;
 
 
+use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 
