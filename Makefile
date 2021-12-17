@@ -31,3 +31,9 @@ docker-pull:
 
 docker-build:
 	docker-compose build
+
+#################
+######################     CODE STYLE CHECKS         ###############################
+#################
+api-psalm:
+	docker-compose run --rm api-php-cli composer psalm --no-cache

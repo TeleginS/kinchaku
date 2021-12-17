@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<psalm
+    totallyTyped="true"
+    errorLevel="1"
+    resolveFromConfigFile="true"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    usePhpStormMetaPath="false"
+    memoizeMethodCallResults="true"
+>
+    <projectFiles>
+        <directory name="app"/>
+        <directory name="database/migrations"/>
+        <ignoreFiles>
+            <file name="app/Http/Kernel.php"/>
+            <directory name="vendor"/>
+            <directory name="tests"/>
+            <directory name="app/Http/Middleware"/>
+        </ignoreFiles>
+    </projectFiles>
+    <plugins>
+        <pluginClass class="Macroactive\LaravelPsalmPlugin\Plugin"/>
+    </plugins>
+    <stubs>
+        <file name="resources/psalm/.phpstorm.meta.php"/>
+        <file name="resources/psalm/Stubs.php"/>
+    </stubs>
+    <issueHandlers>
+        <PropertyNotSetInConstructor>
+            <errorLevel type="suppress">
+                <directory name="database/migrations"/>
+            </errorLevel>
+        </PropertyNotSetInConstructor>
+    </issueHandlers>
+</psalm>
