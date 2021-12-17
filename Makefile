@@ -50,6 +50,8 @@ docker-build:
 #################
 ######################     CODE STYLE CHECKS         ###############################
 #################
+api-check: api-psalm api-lint tests
+
 api-psalm:
 	docker-compose run --rm api-php-cli composer psalm --no-cache
 

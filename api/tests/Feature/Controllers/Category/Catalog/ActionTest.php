@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Feature\Controllers\Category\Catalog;
+namespace Tests\Feature\Controllers\Category\Catalog;
 
 use App\Models\Article;
 use App\Models\Category;
@@ -19,7 +19,6 @@ class ActionTest extends TestCase
 
     public function testEmptyResult(): void
     {
-        $this->markTestIncomplete();
         $response = $this->get("/categories/");
 
         $response->assertStatus(200);
@@ -31,7 +30,6 @@ class ActionTest extends TestCase
 
     public function testResultWithCategories(): void
     {
-        $this->markTestIncomplete();
         foreach (["val1", "val2", "val3"] as $val) {
             $cat = new Category();
             $cat->value = $val;
