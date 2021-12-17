@@ -20,6 +20,8 @@ final class CategoryRepository implements CategoryRepositoryInterface
 
     /**
      * @param string $categoryName
+     * @psalm-suppress InvalidReturnType need  create PR into macroactive/laravel-psalm
+     * @psalm-suppress InvalidReturnStatement
      */
     public function firstOrNew(string $categoryName): Category
     {

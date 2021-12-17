@@ -16,6 +16,7 @@ use App\Models\ArticleMedia;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
+use Webmozart\Assert\Assert;
 
 final class Handler
 {
@@ -46,7 +47,7 @@ final class Handler
         }
 
         $file = Storage::disk("local")->get($command->filePath);
-        /** @psalm-var list<object{@link: string, slug:string, content:list<object{type:string, content:string}>, categories:object{primary:string|null, additional:list<string>}, media:list<object{type:string, media:object{@link:string, attributes:object{url: string}}}>}> */
+        /** @psalm-var list<object{title: string, slug:string, content:list<object{type:string, content:string}>, categories:object{primary:string|null, additional:list<string>}, media:list<object{type:string, media:object{@link:string, attributes:object{url: string}}}>}> */
         $articles = json_decode($file);
 
         $con = DB::connection();
@@ -107,6 +108,7 @@ final class Handler
         ?bool $isPrimary = false
     ): void {
         $category = $this->categoryRepository->firstOrNew($value);
+        Assert::notNull($isPrimary);
         $articleCategory = ArticleCategory::new($isPrimary);
         $articleCategory->associateCategory($category);
         $articleCategory->associateArticle($article);
