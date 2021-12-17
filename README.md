@@ -1,0 +1,2 @@
+# kinchaku
+Articles view
