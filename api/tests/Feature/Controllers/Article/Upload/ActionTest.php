@@ -34,7 +34,6 @@ class ActionTest extends TestCase
 
     public function testUploadWrongJsonInFile(): void
     {
-        $this->markTestIncomplete();
         $content = '[{"@link": "https:\/\/localhost\/","title": "Cosmology in crisis as evidence suggests our universe isn&#8217;t flat, it&#8217;s actually curved","slug": "test-article-handler"}]';
 
         $file = UploadedFile::fake()->createWithContent("feed.json", $content)->mimeType("application/json");
@@ -50,7 +49,6 @@ class ActionTest extends TestCase
 
     public function testUploadSuccessfully(): void
     {
-        $this->markTestIncomplete();
         $fileBasePath = base_path("tests/Fixture/feed.json");
         $data = file_get_contents($fileBasePath);
         $file = UploadedFile::fake()->createWithContent("feed.json", $data)->mimeType("application/json");
@@ -66,7 +64,6 @@ class ActionTest extends TestCase
 
     public function testTwoSameArticlesInFileShouldBeOneArticleInDatabase(): void
     {
-        $this->markTestIncomplete();
         $fileBasePath = base_path("tests/Fixture/twoSameArticle.json");
         $data = file_get_contents($fileBasePath);
         $file = UploadedFile::fake()->createWithContent("feed.json", $data)->mimeType("application/json");

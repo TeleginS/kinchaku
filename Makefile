@@ -55,3 +55,6 @@ api-psalm:
 
 api-lint:
 	docker-compose run --rm api-php-cli composer lint
+
+tests:
+	docker-compose run --rm api-php-cli php artisan test

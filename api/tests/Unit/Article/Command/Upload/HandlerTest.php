@@ -16,7 +16,6 @@ class HandlerTest extends TestCase
 {
     public function testArticleCreatedSuccessfully(): void
     {
-        $this->markTestIncomplete();
         $fileName = "upload.json";
         $fileBasePath = base_path("tests/Fixture/article.json");
         $data = file_get_contents($fileBasePath);
