@@ -21,7 +21,6 @@ class ActionTest extends TestCase
 
     public function testUploadJsonInvalidError(): void
     {
-        $this->markTestIncomplete();
         $file = UploadedFile::fake()->createWithContent("feed.json", "fdsfsfsfsf")->mimeType("application/json");
 
         $response = $this->call('POST', '/articles/upload', [], [], ['file' => $file], ['Accept' => 'application/json']);
