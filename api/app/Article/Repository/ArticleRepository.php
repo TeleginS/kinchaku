@@ -6,9 +6,15 @@ namespace App\Article\Repository;
 
 use App\Models\Article;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 final class ArticleRepository implements ArticleRepositoryInterface
 {
+    public function fetch(Query $filter): LengthAwarePaginator
+    {
+        // TODO: Implement fetch() method.
+    }
+
     /**
      * @psalm-return Builder<Article>
      *

@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Article\Command\Upload;
 
+use App\Article\Query\Catalog\Query;
 use App\Article\Repository\ArticleRepositoryInterface;
 use App\Models\Article;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class InMemoryArticleRepository implements ArticleRepositoryInterface
 {
@@ -24,5 +26,10 @@ class InMemoryArticleRepository implements ArticleRepositoryInterface
     public function existBySlug(string $slug): bool
     {
         return false;
+    }
+
+    public function fetch(Query $filter): LengthAwarePaginator
+    {
+        // TODO: Implement fetch() method.
     }
 }
