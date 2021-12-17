@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
+use Webmozart\Assert\Assert;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -52,8 +53,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function configureRateLimiting()
     {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+        RateLimiter::for("api", function (Request $request) {
+            Assert::notNull($request->ip());
+            return Limit::perMinute(60)->by($request->ip());
         });
     }
 }
