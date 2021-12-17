@@ -17,6 +17,7 @@
             <directory name="vendor"/>
             <directory name="tests"/>
             <directory name="app/Http/Middleware"/>
+            <file name="app/HandlerLocator.php"/>
         </ignoreFiles>
     </projectFiles>
     <plugins>
