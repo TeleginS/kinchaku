@@ -19,6 +19,7 @@
         "macroactive/laravel-psalm": "dev-master",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
+        "overtrue/phplint": "^3.0",
         "phpunit/phpunit": "^9.5.10",
         "vimeo/psalm": "^4.15"
     },
@@ -48,7 +49,8 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ],
-        "psalm": "psalm --config=psalm.xml"
+        "psalm": "psalm --config=psalm.xml",
+        "lint": "phplint"
     },
     "extra": {
         "laravel": {

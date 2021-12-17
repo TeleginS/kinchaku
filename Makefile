@@ -37,3 +37,6 @@ docker-build:
 #################
 api-psalm:
 	docker-compose run --rm api-php-cli composer psalm --no-cache
+
+api-lint:
+	docker-compose run --rm api-php-cli composer lint
