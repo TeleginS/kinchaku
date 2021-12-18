@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "eslint": "eslint --ext .js,.vue src",
-    "eslint-fix": "eslint --fix --ext .js,.vue src"
+    "eslint-fix": "eslint --fix --ext .js,.vue src",
+    "prettier": "prettier"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -15,6 +16,7 @@
     "vue-router": "^3.3.4"
   },
   "devDependencies": {
+    "@prettier/plugin-php": "^0.17.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -22,6 +24,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.5.1",
     "vue-template-compiler": "^2.6.11"
   }
 }

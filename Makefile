@@ -1,9 +1,10 @@
 init: docker-down-clear \
-	  api-clear \
+ 	  api-clear \
  	  docker-pull \
  	  docker-build \
  	  docker-up \
- 	  api-init
+ 	  api-init \
+ 	  frontend-init
 up: docker-up
 down: docker-down
 restart: down up
@@ -24,6 +25,18 @@ api-wait-db:
 
 api-migrations:
 	docker-compose run --rm api-php-cli php artisan migrate
+
+#################
+######################     FRONT         ###############################
+#################
+
+frontend-init: frontend-npm-install frontend-ready
+
+frontend-npm-install:
+	docker-compose run --rm frontend-node-cli npm install
+
+frontend-ready:
+	docker run --rm -v ${PWD}/frontend:/app -w /app alpine touch .ready
 
 #################
 ######################     FRONT         ###############################
@@ -60,3 +73,9 @@ api-lint:
 
 tests:
 	docker-compose run --rm api-php-cli php artisan test
+
+api-prettier:
+	docker-compose run --rm frontend-node-cli npm run prettier -- /php/app --write
+
+frontend-prettier:
+	docker-compose run --rm frontend-node-cli npm run prettier
