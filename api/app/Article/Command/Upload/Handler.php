@@ -68,7 +68,7 @@ final class Handler
                     "" !== $categories->primary
                 ) {
                     $this->createArticleCategory(
-                        (string)$categories->primary,
+                        (string) $categories->primary,
                         $article,
                         true
                     );
@@ -80,7 +80,11 @@ final class Handler
 
                 foreach ($value->media as $m) {
                     if ($m->type === "featured") {
-                        $articleMedia = ArticleMedia::new($m->media->{'@link'}, $m->type, $m->media->attributes->url);
+                        $articleMedia = ArticleMedia::new(
+                            $m->media->{'@link'},
+                            $m->type,
+                            $m->media->attributes->url
+                        );
                         $articleMedia->associateArticle($article);
                         $this->articleMediaRepository->save($articleMedia);
                         break;
@@ -88,7 +92,10 @@ final class Handler
                 }
 
                 $content = $value->content[0];
-                $articleContent = ArticleContent::new($content->type, $content->content);
+                $articleContent = ArticleContent::new(
+                    $content->type,
+                    $content->content
+                );
                 $articleContent->associateArticle($article);
                 $this->articleContentRepository->save($articleContent);
             }

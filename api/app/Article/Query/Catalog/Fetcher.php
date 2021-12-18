@@ -37,6 +37,10 @@ class Fetcher
             ];
         }
 
-        return ["success" => true, "articles" => $result, "total" => $articlesPagination->total()];
+        return [
+            "success" => true,
+            "articles" => $result,
+            "total" => $articlesPagination->total(),
+        ];
     }
 }

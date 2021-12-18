@@ -82,8 +82,7 @@ class Article extends Model
     /** @param Category[]|iterable|Collection $categories */
     public function addCategories(iterable $categories): void
     {
-        $this->categories()
-            ->saveMany($categories);
+        $this->categories()->saveMany($categories);
     }
 
     /** @return array */

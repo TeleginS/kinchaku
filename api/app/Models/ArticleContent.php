@@ -37,7 +37,6 @@ class ArticleContent extends Model
         return $articleContent;
     }
 
-
     public function article(): BelongsTo
     {
         return $this->belongsTo(Article::class, "article_id");

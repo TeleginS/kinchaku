@@ -40,7 +40,6 @@ class ArticleMedia extends Model
         return $articleMedia;
     }
 
-
     protected function article(): BelongsTo
     {
         return $this->belongsTo(Article::class, "article_id");

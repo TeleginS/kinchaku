@@ -21,8 +21,10 @@ class AppServiceProvider extends ServiceProvider
         CategoryRepositoryInterface::class => CategoryRepository::class,
         ArticleRepositoryInterface::class => ArticleRepository::class,
         ArticleMediaRepositoryInterface::class => ArticleMediaRepository::class,
-        ArticleContentRepositoryInterface::class => ArticleContentRepository::class,
-        ArticleCategoryRepositoryInterface::class => ArticleCategoryRepository::class,
+        ArticleContentRepositoryInterface::class =>
+            ArticleContentRepository::class,
+        ArticleCategoryRepositoryInterface::class =>
+            ArticleCategoryRepository::class,
     ];
 
     /**
@@ -32,7 +34,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 
     /**
