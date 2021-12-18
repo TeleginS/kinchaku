@@ -10,6 +10,7 @@
 - Authorization via JWT
 - Upgrade php to 8.0 version, better to 8.1 =)
 - GraphQL
+- Change prettier for php to cs-fixer
 
 ### 2 How would you track down a performance issue in production? Have you ever had to do this?
 I have little experience with this. 
