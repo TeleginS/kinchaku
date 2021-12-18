@@ -13,7 +13,6 @@ class ActionTest extends TestCase
 {
     public function testEmptyResult()
     {
-        $this->markTestIncomplete();
         //Clear DB after uploading. Better use testing env
         Article::query()->truncate();
         Category::query()->truncate();
@@ -30,7 +29,6 @@ class ActionTest extends TestCase
 
     public function test2ArticlesInFeed()
     {
-        $this->markTestIncomplete();
         $fileBasePath = base_path("tests/Fixture/feed.json");
         $data = file_get_contents($fileBasePath);
         $file = UploadedFile::fake()->createWithContent("feed.json", $data)->mimeType("application/json");
@@ -54,7 +52,6 @@ class ActionTest extends TestCase
 
     public function testSearchFilter()
     {
-        $this->markTestIncomplete();
         $fileBasePath = base_path("tests/Fixture/feed.json");
         $data = file_get_contents($fileBasePath);
         $file = UploadedFile::fake()->createWithContent("feed.json", $data)->mimeType("application/json");
@@ -78,7 +75,6 @@ class ActionTest extends TestCase
 
     public function testCategoryFilter()
     {
-        $this->markTestIncomplete();
         $fileBasePath = base_path("tests/Fixture/feed.json");
         $data = file_get_contents($fileBasePath);
         $file = UploadedFile::fake()->createWithContent("feed.json", $data)->mimeType("application/json");
@@ -102,7 +98,6 @@ class ActionTest extends TestCase
 
     public function testSearchCategoryFilter()
     {
-        $this->markTestIncomplete();
         $fileBasePath = base_path("tests/Fixture/feed.json");
         $data = file_get_contents($fileBasePath);
         $file = UploadedFile::fake()->createWithContent("feed.json", $data)->mimeType("application/json");
