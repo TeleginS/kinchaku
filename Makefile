@@ -78,4 +78,4 @@ api-prettier:
 	docker-compose run --rm frontend-node-cli npm run prettier -- /php/app --write
 
 frontend-prettier:
-	docker-compose run --rm frontend-node-cli npm run prettier
+	docker-compose run --rm frontend-node-cli npm run prettier -- /app/src --write
