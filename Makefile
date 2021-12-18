@@ -74,6 +74,8 @@ api-lint:
 tests:
 	docker-compose run --rm api-php-cli php artisan test
 
+code-style-app: api-prettier frontend-prettier
+
 api-prettier:
 	docker-compose run --rm frontend-node-cli npm run prettier -- /php/app --write
 
