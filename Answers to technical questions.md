@@ -26,9 +26,9 @@ I would enter logging, SMS notification (AWS can do this), connected a third-par
     "nationality": "Russian",
     "city": "Vladivostok",
     "timezone_of_residence": "GMT+10",
-        "passions": [
-        "Footbal",
-        "My family"
+    "passions": [
+        "My family",
+        "Footbal"
     ],
     "interests": [
         "Stock Exchange",
