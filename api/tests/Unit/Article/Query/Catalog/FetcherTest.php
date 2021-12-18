@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Article\Query\Catalog;
 
+use App\Article\Query\Catalog\Fetcher;
+use App\Article\Query\Catalog\Query;
 use App\Models\Article;
 use App\Models\ArticleCategory;
 use App\Models\ArticleContent;
@@ -21,7 +23,6 @@ class FetcherTest extends TestCase
 {
     public function testSuccess(): void
     {
-        $this->markTestIncomplete();
         $article = Article::new("title", "slug");
         $article->id = 1;
         $article->content = ArticleContent::new("type", "content");
